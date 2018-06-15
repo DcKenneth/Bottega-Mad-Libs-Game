@@ -1,3 +1,15 @@
+@mixin button {
+    height: 50px;
+        width: 300px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+        color: white;
+        font-family: 'montserrat';
+        font-size: 22px;
+        text-align: center;
+}
+
+
 .home {
     position: relative;
 
@@ -5,15 +17,15 @@
     display: grid;
 
     justify-items: center;
-    //align-items: center;
+    // align-items: center;
     grid-template-rows: [header-s] 218px [header-e card-s] minmax(736px, 994px) [card-e];
 }
 
-.header{
+.header {
     color: white;
     font-family: 'Montserrat';
-    align-self: center;
     text-align: center;
+    align-self: center;
     &__skew {
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 25%, 0 50%);
         clip-path: polygon(0 0, 100% 0%, 100% 25%, 0 50%);
@@ -38,14 +50,14 @@
         width: 100vw;
         background-color: #00CB79;
     }
-    
+
     h1 {
         font-size: 36px;
-        font-weight: 500px;
+        font-weight: 500;
         line-height: 44px;
     }
 
-    p{
+    p {
         color: rgba(255,255,255,0.75);
         font-size: 15px;
         font-weight: 300;
@@ -54,21 +66,22 @@
     }
 }
 
+
 .card {
     min-height: 736px;
     max-height: 994px;
     width: 1240px;
-    box-shadow: 0 4px 30px 0 rgba(0, 0, 0, .06);
+    box-shadow: 0 4px 30px 0 rgba(0,0,0,.06);
     border-radius: 7px;
 
     display: grid;
-    grid-template-rows:  1fr 50px;
+    grid-template-rows: 1fr 50px;
     background-color: white;
     &__inputs {
-        //background-color: skyblue;
+        // background-color: skyblue;
         display: grid;
-        grid-template-rows: repeat(4, 1fr);
-        grid-template-columns: repeat(4, 27px);
+        grid-template-rows: repeat(4, 27px);
+        grid-template-columns: repeat(4, 1fr);
 
         grid-row-gap: 120px;
         margin-top: 66px;
@@ -77,13 +90,29 @@
 
         justify-items: center;
         align-items: center;
-
     }
-} 
+
+    button:focus {
+        outline: none;
+    }
+
+    button {
+        justify-self: center;
+    }
+
+    &__generate {
+        background-color: #00CB79;
+        @include button;
+    }
+    &__clear {
+        background-color: #45B0E5;
+        @include button;
+    }
+}
 
 .input {
-    display:grid;
-    //grid-template-rows: 1fr 1fr 1fr ;
+    display: grid;
+    // grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: [number-s] 26px [number-e input-s] 1fr [input-e];
 
     font-family: 'Montserrat';
@@ -95,6 +124,7 @@
     &__title {
         grid-column: input-s/input-e;
 
+        
         color: #B3B3B3;
         font-size: 12px;
         font-weight: 300;
@@ -113,9 +143,11 @@
 
         &:focus {
             outline: none;
-            border-bottom: 1px solid rgb(29, 240, 255);
-
+            border-bottom: 1px solid rgb(0, 255, 247);
+   
         }
+        // width: 190px;
+        // height: 40px;
     }
     &__number {
         grid-column: number-s/number-e;
@@ -124,10 +156,9 @@
         color: white;
         font-size: 20px;
         line-height: 24px;
-        padding-top: 3px;
+        padding-top: 1px;
         height: 26px;
         width: 26px;
         border-radius: 50%;
-
     }
 }
