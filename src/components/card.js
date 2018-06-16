@@ -64,7 +64,7 @@ class Card extends Component {
 
             {title: 'Noun', state: this.state.nounTwo, name: 'nounTwo'},
             {title: 'Adjective', state: this.state.adjectiveThree, name: 'adjectiveThree'},
-            {title: 'Celebrity', state: this.state.elebTwo, name: 'celebTwo'},
+            {title: 'Celebrity', state: this.state.celebTwo, name: 'celebTwo'},
             {title: 'Celebrity', state: this.state.celebThree, name: 'celebThree'},
 
             {title: 'Adjective', state: this.state.adjectiveFour, name: 'adjectiveFour'},
